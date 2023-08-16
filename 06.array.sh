@@ -2,6 +2,8 @@
 
 USERS=("user1" "user2" "user3")
 
+# for first user 
 echo "First person : ${USERS[0]}"
 
-echo "Second person : $USERS[1]"
+# for all users 
+echo "Second person : ${USERS[@]}"
