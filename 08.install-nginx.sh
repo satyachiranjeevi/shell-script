@@ -17,6 +17,7 @@ yum install nginxxxxx -y
 if [ $? -ne 0 ]
 then
     echo "Error installing nginx"
+    exit 1
 else
     systemctl enable nginx
     systemctl start nginx
