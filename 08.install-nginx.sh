@@ -12,7 +12,7 @@ then
 #   echo "INFO:: You are root user"
 fi
 
-yum install nginxxxxx -y
+yum install nginx -y
 
 if [ $? -ne 0 ]
 then
@@ -21,4 +21,14 @@ then
 else
     systemctl enable nginx
     systemctl start nginx
+fi
+
+yum install postfix -y
+
+if [ $? -ne 0 ]
+then 
+    echo "Installation of postfix is error"
+    exit 1
+else
+    echo "Installation of postfix is success"
 fi
