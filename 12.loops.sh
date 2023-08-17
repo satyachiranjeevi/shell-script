@@ -7,17 +7,21 @@ N="\e[0m"
 
 VALIDATE()
 {
-    if ( $1 -ne 0 )
+    #function statements
+
+    if [ $1 -ne 0 ]
     then
-        echo -e "installation $R FAILED $N for $2"
+        echo -e "installation is $R failed $N for $2"
+        exit 1
     else
-         echo -e "installation $G Successful for $N for $2"
+        echo -e "Installation is $G success $N for $2"
     fi
+
 }
 
 for args in $@
 do
-    Yum install $args -y
+    yum install $args -y
 
     VALIDATE $? $args
 done
