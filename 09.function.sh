@@ -7,16 +7,20 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 VALIDATE()
 {
     #function statements
 
     if [ $1 -ne 0 ]
     then
-        echo "installation is failed for $2"
+        echo -e "installation is $R failed $N for $2"
         exit 1
     else
-        echo "Installation is success for $2"
+        echo -e "Installation is $G success $N for $2"
     fi
 
 }
