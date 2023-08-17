@@ -12,7 +12,6 @@ VALIDATE()
     if [ $1 -ne 0 ]
     then
         echo -e "installation is $R failed $N for $2"
-        exit 1
     else
         echo -e "Installation is $G success $N for $2"
     fi
