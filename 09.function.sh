@@ -3,6 +3,7 @@
 #install nginx 
 
 USERID=$(id -u)
+LOGFILE=/tmp/
 
 VALIDATE()
 {
