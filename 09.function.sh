@@ -13,7 +13,7 @@ VALIDATE()
         echo "installation is failed"
         exit 1
     else
-        echo "Installation is success"
+        echo "Installation is success for $2"
     fi
 
 }
@@ -28,8 +28,8 @@ fi
 
 yum install nginx -y
 
-VALIDATE $?
+VALIDATE $? "nginx"
 
 yum install postfixxx -y
 
-VALIDATE $?
+VALIDATE $? "postfix"
