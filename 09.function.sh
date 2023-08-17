@@ -3,7 +3,8 @@
 #install nginx 
 
 USERID=$(id -u)
-LOGFILE=/tmp/
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME=$DATE.log
 
 VALIDATE()
 {
@@ -27,10 +28,10 @@ then
 #   echo "INFO:: You are root user"
 fi
 
-yum install nginx -y
+yum install nginxxx -y&>>LOGFILE
 
 VALIDATE $? "nginx"
 
-yum install postfixxx -y
+yum install postfixxx -y&>>LOGFILE
 
 VALIDATE $? "postfix"

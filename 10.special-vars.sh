@@ -12,4 +12,4 @@ echo "all vars : $@"
 echo "number of vars : $#"
 
 # script name
-echo "number of vars : $0"
+echo "script name : $0"
