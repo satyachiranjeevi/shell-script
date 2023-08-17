@@ -28,10 +28,10 @@ then
 #   echo "INFO:: You are root user"
 fi
 
-yum install nginxxx -y&>>LOGFILE
+yum install nginxxx -y &>>$LOGFILE
 
 VALIDATE $? "nginx"
 
-yum install postfixxx -y&>>LOGFILE
+yum install postfixxx -y &>>$LOGFILE
 
 VALIDATE $? "postfix"
