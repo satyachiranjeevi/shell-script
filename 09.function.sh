@@ -10,7 +10,7 @@ VALIDATE()
 
     if [ $1 -ne 0 ]
     then
-        echo "installation is failed"
+        echo "installation is failed for $2"
         exit 1
     else
         echo "Installation is success for $2"
