@@ -4,6 +4,9 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
+SCRIPT_NAME=$0
+DATE=$(date +%F)
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
 VALIDATE()
 {
@@ -20,7 +23,7 @@ VALIDATE()
 
 for args in $@
 do
-    yum install $args -y
+    yum install $args -y &>>$LOGFILE
 
-    VALIDATE $? $args
+    VALIDATE $? $args -y &>>$LOGFILE
 done
