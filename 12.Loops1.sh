@@ -20,7 +20,7 @@ fi
 
 VALIDATE()
 {
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then   
         echo -e " $R Installing $2 is failed. $N"
         exit 1
