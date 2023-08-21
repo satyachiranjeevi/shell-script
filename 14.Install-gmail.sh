@@ -18,7 +18,7 @@ fi
 
 VALIDATE()
 {
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then
         echo "$R ERROR: Command $2 execution has got failed $N"
         exit 1
