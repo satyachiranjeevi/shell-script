@@ -8,6 +8,11 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
+R="\e[31m" #Red color
+G="\e[32m" #Green color
+N="\e[0m"  #Normal color
+
+
 #1. Check if User is root user or not. If not, show error message and exit from the script
 if [ $USERID -ne 0 ]
 then
@@ -20,10 +25,10 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo "$R ERROR: Command $2 execution has got failed $N"
+        echo -e "$R ERROR: Command $2 execution has got failed $N"
         exit 1
     else
-        echo "$G Success: COmmand $2 execution has been successfully completed. $N"
+        echo -e "$G Success: COmmand $2 execution has been successfully completed. $N"
     fi
 }
 # Update yum repo
