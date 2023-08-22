@@ -57,12 +57,25 @@ VALIDATE $? "enable postfix"
 
 # Open the /etc/postfix/main.cf file.
 
-echo -e
-"relayhost = [smtp.gmail.com]:587
-smtp_use_tls = yes
-smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-smtp_sasl_security_options = noanonymous
-smtp_sasl_tls_security_options = noanonymous" > /etc/postfix/main.cf 
+cp mail-main.cf /etc/postfix/main.cf 
 
 VALIDATE $? "create main.cf"
+
+echo "Enter your user name for gmail : "
+
+read USERNAME
+
+echo "user name is $USERNAME"
+
+echo "Enter your password for gmail : "
+
+read PASSWORD
+
+echo "PASSWORD is $PASSWORD"
+
+cp mail-cred /etc/postfix/sasl_passwd
+
+postmap /etc/postfix/sasl_passwd 
+
+echo "This is a test mail & Date $(date)" | mail -s "message" dschiranjeevi222@gmail.com
+
