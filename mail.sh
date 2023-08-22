@@ -13,3 +13,6 @@ ALERT_TYPE=$5
 
 echo "all args : $@"
 
+FINAL_BODY=$(sed -e "s/TEAM_NAME/$TEAM_NAME/g" -e "s/Message/$EMAIL_BODY/g" email-format.html)
+
+echo $FINAL_BODY | mail -s "$SUBJECT" $TO_ADDRESS
