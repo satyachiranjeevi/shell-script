@@ -73,6 +73,11 @@ read PASSWORD
 
 echo "PASSWORD is $PASSWORD"
 
+#FINAL_BODY=$(sed -e "s/TEAM_NAME/$TEAM_NAME/g" -e "s/Message/$EMAIL_BODY/g" email-format.html)
+
+#echo "$FINAL_BODY" | mail -s "$(echo -e "$SUBJECT\nContent-Type: text/html")" $TO_ADDRESS
+
+EMAIL_CRED=$(sed -i "s/USER_NAME/$USERNAME/g" -e "s/PASSWORD/$PASSWORD/g" mail-cred)
 cp mail-cred /etc/postfix/sasl_passwd
 
 postmap /etc/postfix/sasl_passwd 
