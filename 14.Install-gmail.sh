@@ -79,7 +79,7 @@ echo "PASSWORD is $PASSWORD"
 
 cp mail-cred /etc/postfix/sasl_passwd
 
-sed -i "s/UNAME/$UNAME" -i "s/PASSWORD/$PASSWORD" /etc/postfix/sasl_passwd
+sed -i "s/UNAME/duvvu.chiranjeevi@gmail.com" -i "s/PASSWORD/tldlvpkupgrmoxqt" /etc/postfix/sasl_passwd
 
 postmap /etc/postfix/sasl_passwd 
 
