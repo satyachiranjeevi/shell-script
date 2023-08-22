@@ -6,7 +6,8 @@
 
 TO_ADDRESS=$1
 SUBJECT=$2
-EMAIL_BODY=$3
+EMAIL_BODY=$(sed -e 's/[]\/$*.^[]/\\&/g' <<< $3)
+echo "escapged content: $EMAIL_BODY"
 TEAM_NAME=$4
 ALERT_TYPE=$5
 
