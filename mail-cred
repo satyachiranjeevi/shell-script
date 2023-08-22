@@ -1,1 +1,1 @@
-[smtp.gmail.com]:587 USER_NAME:PASSWORD
+[smtp.gmail.com]:587 UNAME:PASSWORD
