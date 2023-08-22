@@ -65,7 +65,7 @@ echo "Enter your user name for gmail : "
 
 read USERNAME
 
-echo "user name is $USERNAME"
+echo "user name is $UNAME"
 
 echo "Enter your password for gmail : "
 
@@ -79,7 +79,7 @@ echo "PASSWORD is $PASSWORD"
 
 cp mail-cred /etc/postfix/sasl_passwd
 
-sed -i "s/UNAME/$USERNAME" -i "s/PASSWORD/$PASSWORD/g" /etc/postfix/sasl_passwd
+sed -i "s/UNAME/$UNAME" -i "s/PASSWORD/$PASSWORD" /etc/postfix/sasl_passwd
 
 postmap /etc/postfix/sasl_passwd 
 
