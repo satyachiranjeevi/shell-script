@@ -30,4 +30,5 @@ done <<< $DISK_USAGE
 
 echo -e "message-  $message"
 
-mail.sh dschiranjeevi222@gmail.com "High Disk Usage" "$message" "DEVOPS TEAM" "ALERT: HIGH DISK USAGE"
+#Calling others scripts from current script :== using sh script name
+sh mail.sh dschiranjeevi222@gmail.com "High Disk Usage" "$message" "DEVOPS TEAM" "HIGH_DISK_USE"
