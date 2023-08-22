@@ -77,8 +77,9 @@ echo "PASSWORD is $PASSWORD"
 
 #echo "$FINAL_BODY" | mail -s "$(echo -e "$SUBJECT\nContent-Type: text/html")" $TO_ADDRESS
 
-EMAIL_CRED=$(sed -i "s/UNAME/$USERNAME/g" -i "s/PASSWORD/$PASSWORD/g" mail-cred)
 cp mail-cred /etc/postfix/sasl_passwd
+
+sed -i "s/UNAME/$USERNAME" -i "s/PASSWORD/$PASSWORD/g" /etc/postfix/sasl_passwd
 
 postmap /etc/postfix/sasl_passwd 
 
